@@ -1,0 +1,171 @@
+@use 'variables' as v;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: v.$Font-Josefin-Sans;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.main-container{
+    background-color: v.$Gradint-2;
+    .section-container{
+        // border: 1px solid;
+        width: 375px;
+        height: 800px;
+        @media (min-width: 900px){
+           width: 1440px;
+           height: 800px;
+           background-image: url('../images/bg-pattern-desktop.svg');
+           position: relative;
+        }
+
+        //Content 1
+        &__content1{
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            @media (min-width: 900px){
+                position: absolute;
+                margin-left: 140px;
+                margin-top: 50px;
+            }
+        }
+        &__logo{
+            width: 100px;
+            margin-left: 30px;
+            @media (min-width: 900px){
+                width: 160px;  
+            }
+        }
+
+        //Content 2
+        &__content2{
+            height: 250px;
+            margin-bottom: 70px;
+            @media (min-width: 900px){
+                margin: 0; 
+            }
+        }
+        &__img{
+            height: 100%;
+            @media (min-width: 900px){
+                content: url('../images/hero-desktop.jpg');  
+                position: absolute;
+                right: 0;
+                height: 100%;
+                
+            }
+        }
+
+        //Content 3
+        &__content3{
+            padding: 35px;
+            text-align: center;
+            @media (min-width: 900px){
+                width: 444px;
+                padding: 0;
+                text-align: start;
+                margin: 0px 0 0 135px;
+            }
+        }
+        &__title{
+            color: v.$Desaturated-Red;
+            text-transform: uppercase;
+            font-size: 2.5em;
+            font-weight: 300;
+            letter-spacing: 11px;
+            @media (min-width: 900px){
+               text-align: left;
+               font-size: 4.1em;
+               letter-spacing: 15px;
+            }
+ 
+        }
+        &__title-span{
+            color: v.$Dark-Grayish-Red;
+            font-weight: 700;
+        }
+        &__description{
+            color: v.$Desaturated-Red;
+            margin: 30px 0 40px 0;
+            font-size: 0.85em;
+            line-height: 1.4em;
+            @media (min-width: 900px){
+                text-align: left;
+                font-size: 1em;
+            }
+        }
+        //Input
+        &__form{
+            height: 50px;
+            position: relative;
+            @media (min-width: 900px){
+                height: 60px;
+            }
+        }
+        &__form-input{
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            border-style: none;
+            border: 1px solid v.$Desaturated-Red;
+            padding-left: 16px;
+            outline: none;
+            //background-image: url('/images/icon-error.svg');
+            background-repeat: no-repeat;
+            background-position: 210px;
+            @media (min-width: 900px){
+                background-position: 300px;
+            }
+        }
+        &__form-input::placeholder{
+            color: v.$Desaturated-Red;
+        }
+        &__form-button{
+            position: absolute;
+            right: 0;
+            width: 68px;
+            height: 50px;
+            border-radius: 30px;
+            border-style: none;
+            background: linear-gradient(135deg, (v.$Gradint-3), (v.$Gradint-4));
+            cursor: pointer;
+            @media (min-width: 900px){
+                width: 100px;
+                height: 60px;
+            }
+        }
+        &__form-button:hover{
+           background: linear-gradient(135deg, (v.$Gradint-2), (v.$Gradint-4));
+           box-shadow: 0 10px 15px (v.$Gradint-4);
+        }
+
+        &__form-validation{
+            font-size: 0.85em;
+            margin: 8px 0 0 14px;
+            color: v.$Soft-Red;
+            text-align: start;
+        }
+    }
+}
+
+// ============ Footer ============== //
+.attribution { 
+    margin-bottom: 20px;
+    font-size: 14px; 
+    text-align: center; 
+}
+    .attribution a { 
+        color: hsl(228, 45%, 44%); 
+        text-decoration: none;
+    }
